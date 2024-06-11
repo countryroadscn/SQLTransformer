@@ -1,4 +1,4 @@
-// Generated from ClickHouseParser.g4 by ANTLR 4.9.2
+// Generated from ClickHouseParser.g4 by ANTLR 4.13.1
 package com.tme.di.parser;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -614,6 +614,18 @@ public interface ClickHouseParserVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitDataClauseSelect(ClickHouseParser.DataClauseSelectContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ClickHouseParser#assignmentValues}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignmentValues(ClickHouseParser.AssignmentValuesContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ClickHouseParser#assignmentValue}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignmentValue(ClickHouseParser.AssignmentValueContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code KillMutationStmt}
 	 * labeled alternative in {@link ClickHouseParser#killStmt}.

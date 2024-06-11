@@ -3,7 +3,9 @@ package com.tme.di.parser;
 import com.tme.di.parser.ast.DescribeQuery;
 import com.tme.di.parser.ast.SelectUnionQuery;
 import lombok.extern.slf4j.Slf4j;
-import org.antlr.v4.runtime.ANTLRInputStream;
+
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
 
@@ -28,7 +30,7 @@ public class AstParser {
             long start = System.currentTimeMillis();
             // try parsing a SQL
             InputStream inputStream = new ByteArrayInputStream(sql.getBytes());
-            ANTLRInputStream antlrInputStream = new ANTLRInputStream(inputStream);
+            CharStream antlrInputStream = CharStreams.fromStream(inputStream);
             ClickHouseLexer ckLexer = new ClickHouseLexer(antlrInputStream);
             TokenStream tokens = new CommonTokenStream(ckLexer);
             ClickHouseParser ckParser = new ClickHouseParser(tokens);

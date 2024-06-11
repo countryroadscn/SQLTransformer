@@ -1,4 +1,4 @@
-// Generated from ClickHouseParser.g4 by ANTLR 4.9.2
+// Generated from ClickHouseParser.g4 by ANTLR 4.13.1
 package com.tme.di.parser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -10,6 +10,7 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
+@SuppressWarnings("CheckReturnValue")
 public class ClickHouseParserBaseListener implements ClickHouseParserListener {
 	/**
 	 * {@inheritDoc}
@@ -1115,6 +1116,30 @@ public class ClickHouseParserBaseListener implements ClickHouseParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitDataClauseSelect(ClickHouseParser.DataClauseSelectContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAssignmentValues(ClickHouseParser.AssignmentValuesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignmentValues(ClickHouseParser.AssignmentValuesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAssignmentValue(ClickHouseParser.AssignmentValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignmentValue(ClickHouseParser.AssignmentValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

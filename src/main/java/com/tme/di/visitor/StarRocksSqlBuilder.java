@@ -4,12 +4,10 @@ import com.tme.di.parser.AstParser;
 import com.tme.di.parser.ast.*;
 import com.tme.di.parser.ast.expr.*;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
-
+// import lombok.extern.slf4j.Slf4j;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Slf4j
 public class StarRocksSqlBuilder extends BaseSqlBuilder {
     private Map<String, Set<String>> tablename2UnixTimestampColumnNames = new HashMap<>();
     private Stack<String> subQueryTypeStack;
@@ -41,6 +39,30 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
 
     public StarRocksSqlBuilder() {
         super(".");
+    }
+
+    public static void main(String[] args) {
+        // if (args.length > 0) {
+        //     String clickhouseSql = args[0];
+        //     System.out.println("clickhouse sql: " + clickhouseSql);
+        //     StarRocksSqlBuilder sr = new StarRocksSqlBuilder();
+        //     try{
+        //         String starRocksSql = sr.getStarRocksSql(clickhouseSql);
+        //         System.out.println("starrocks sql: " + starRocksSql);
+        //     } catch (SqlRewriteException e) {
+        //         e.printStackTrace();
+        //     }
+        // } else {
+        //     System.out.println("No input provided");
+        // }
+        String clickhouseSql = "SELECT toDateTime(date_time) FROM db.table";
+        StarRocksSqlBuilder sr = new StarRocksSqlBuilder();
+        try{
+            String starRocksSql = sr.getStarRocksSql(clickhouseSql);
+            System.out.println(starRocksSql);
+        } catch (SqlRewriteException e) {
+            e.printStackTrace();
+        }
     }
 
     private int currentAliasNum = 1;
@@ -87,7 +109,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
         String expr = tryGetExprFromAliasMap(name);
         if (expr != null) {
             if (!expr.equals(name)) {
-                log.info(String.format("发现计算列:%s, 替换为%s", name, expr));
+                // log.info(String.format("发现计算列:%s, 替换为%s", name, expr));
                 return expr;
             }
         }
@@ -178,7 +200,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
     public void recordDateTimeTypeColumn(ColumnExpr expr, Identifier aliasId) {
         if (isDateTimeFunctionExpr(expr)) {
             String alias = visitAliasIdentifier(aliasId);
-            log.debug("发现datetime类型:" + alias);
+            // log.debug("发现datetime类型:" + alias);
             currentSqlScope.getDateTimeColumns().add(alias);
         }
     }
@@ -357,7 +379,8 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                 }
             }
         } catch (Exception e) {
-            log.error("Handle Null Condition Errors: " + e.getMessage());
+            e.printStackTrace();
+            // log.error("Handle Null Condition Errors: " + e.getMessage());
         }
         return null;
     }
@@ -681,7 +704,9 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                     break;
                 }
                 case "extractAll": {
-                    log.error("extractAll暂时没有对应的StarRocks方言函数");
+                    // log.error("extractAll暂时没有对应的StarRocks方言函数");
+                    String patternEscaped = fixBackSlash(secondArg);
+                    rewrittenFunction = String.format("REGEXP_EXTRACT_ALL(%s, %s, 0)", firstArg, patternEscaped);
                     break;
                 }
                 case "match": {
@@ -689,6 +714,19 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                     rewrittenFunction = String.format("REGEXP(%s, %s)", firstArg, patternEscaped);
                     break;
                 }
+                case "multiMatchAny": {
+                    // if (secondArg.length()>=2){
+                    //     rewrittenFunction = String.format("REGEXP(%s, %s)", firstArg, patternEscaped);
+                    // }else{
+                    //     // multiMatchAny暂时没有对应的StarRocks方言函数"
+                        
+                    // }
+                    // ArrayList<String> patterns = visitArray(secondArg);
+                    
+
+                    break;
+                }
+
                 case "negate": {
                     rewrittenFunction = String.format("NEGATIVE(%s)", firstArg);
                     break;
@@ -698,8 +736,8 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                 }
                 case "regexpExtract": {
                     if (argLength != 3) {
-                        log.warn(
-                                "StarRocks只支持同时传入matchGroup的情况, 但是Clickhouse的matchGroup是可选参数并且本次没有传入。");
+                        // log.warn(
+                        //         "StarRocks只支持同时传入matchGroup的情况, 但是Clickhouse的matchGroup是可选参数并且本次没有传入。");
                         break;
                     }
                     String patternEscaped = fixBackSlash(secondArg);
@@ -767,6 +805,9 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                     rewrittenFunction = String.format("GET_JSON_OBJECT(%s,%s)", firstArg, secondArg);
                     break;
                 }
+                case "JSONExtract":
+                    rewrittenFunction = String.format("JSON_QUERY(%s, %s)", firstArg, secondArg);
+                    break;
                 case "JSONExtractRaw": {
                     rewrittenFunction = String.format("GET_JSON_STRING(%s, %s)", firstArg, secondArg);
                     break;
@@ -931,6 +972,10 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                 case "toDecimal64":
                 case "toDecimal128":
                 case "toDecimal256":
+                case "toDecimal32OrZero":
+                case "toDecimal64OrZero":
+                case "toDecimal128OrZero":
+                case "toDecimal256OrZero":
                 case "toDecimal32OrNull":
                 case "toDecimal64OrNull":
                 case "toDecimal128OrNull":
@@ -1090,7 +1135,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
             }
             return rewrittenFunction;
         } catch (Exception e) {
-            log.error("Clickhouse SQL转化成StarRocks SQL出错, " + e.getMessage());
+            // log.error("Clickhouse SQL转化成StarRocks SQL出错, " + e.getMessage());
             throw e;
         }
 
@@ -1145,7 +1190,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
      */
     private void handleArrayJoinFunction(List<ColumnExpr> args) {
         if (args == null || args.size() > 1) {
-            log.error("ARRAY JOIN改写只支持1列的情况");
+            // log.error("ARRAY JOIN改写只支持1列的情况");
         } else {
             ColumnExpr expr = args.get(0);
             currentSqlScope.arrayJoinExprToUnnestFromArrayJoinFunction = visitColumnExpr(expr);
@@ -1187,6 +1232,8 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
         pattern = pattern.replace("\\?", "\\\\?");
         return pattern;
     }
+
+
 
     private String handleSupersetDateTimeColumn(String functionName,
                                                 ColumnExpr firstArgColumnExpr, String firstArg) {
@@ -1234,6 +1281,18 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
             return firstArgInCKSql.toUpperCase().startsWith("SPLIT");
         }
         return false;
+    }
+
+    private ArrayList<String> visitArray(ColumnExpr columnExpr) {
+        ArrayList<String> result = new ArrayList<>();
+        if (isArrayType(columnExpr)) {
+            String firstArgInCKSql = ckSqlBuilder.visit(columnExpr);
+            String[] split = firstArgInCKSql.split(",");
+            for (String s : split) {
+                result.add(s);
+            }
+        }
+        return result;
     }
 
     // YYYY-MM-dd或者YYYYMMdd的日期
@@ -1374,7 +1433,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
 
         String sql = this.currentColumnCache.get(expr);
         if (null != sql) {
-            log.debug(String.format("命中column cache, %s -> %s", expr, sql));
+            // log.debug(String.format("命中column cache, %s -> %s", expr, sql));
             return sql;
         }
 
@@ -1396,7 +1455,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
         if (null != arrayJoinClause.getExprs()) {
             List<ColumnExpr> exprs = arrayJoinClause.getExprs();
             if (exprs.size() > 1) {
-                log.error("ARRAY JOIN改写只支持1列的情况");
+                // log.error("ARRAY JOIN改写只支持1列的情况");
                 return null;
             }
             ColumnExpr expr = exprs.get(0);
@@ -1414,7 +1473,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                 arrayJoinAlias = visit(expr);
                 currentSqlScope.arrayJoinColumnToAdd = ColumnExpr.createAlias(cie, new Identifier(arrayJoinAlias));
             } else {
-                log.error("ARRAY JOIN异常");
+                // log.error("ARRAY JOIN异常");
                 arrayJoinAlias = "";
             }
 
@@ -1510,7 +1569,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                         identifierColumnExpr = (IdentifierColumnExpr) id;
                         addTableLabelToIdentifierColumnExpr(identifierColumnExpr, tableIdentifier, leftIds);
                     } else if (id instanceof AliasColumnExpr) {
-                        log.debug("AliasColumnExpr ignored");
+                        // log.debug("AliasColumnExpr ignored");
                     } else if (id instanceof FunctionColumnExpr) {
                         List<IdentifierColumnExpr> identifierColumnExprs =
                                 findIdentifierColumnExprFromFunctionColumnExpr((FunctionColumnExpr) id);
@@ -1518,7 +1577,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                             addTableLabelToIdentifierColumnExpr(_id, tableIdentifier, leftIds);
                         }
                     } else {
-                        log.debug(id.getClass().getName() + " ignored");
+                        // log.debug(id.getClass().getName() + " ignored");
                     }
                 }
                 traverseSqlScope(node.left);

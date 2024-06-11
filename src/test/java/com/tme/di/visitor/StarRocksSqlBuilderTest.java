@@ -172,6 +172,13 @@ public class StarRocksSqlBuilderTest {
                         "测试timestamp_add函数"
                 )
         );
+        testCases.add(
+                new TestCase(
+                        "select sumIf(1, day>=today())",
+                        "sum(if((day) >= (curdate()),1,0)",
+                        "测试sumIf函数"
+                )
+        );
     }
 
 

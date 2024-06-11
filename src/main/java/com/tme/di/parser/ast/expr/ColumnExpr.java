@@ -49,9 +49,8 @@ public class ColumnExpr extends INode {
         return asteriskColumnExpr;
     }
 
+    @SuppressWarnings("unlikely-arg-type")
     public static FunctionColumnExpr createFunction(Identifier name, List<ColumnExpr> params, List<ColumnExpr> args) {
-        // FIXME: make sure that all function names are camel-case.
-
         // Flatten some consequent binary operators to a single multi-operator, because they are left-associative.
         // for example, this changes "AND(AND(a1, a2), b)" to "AND(a1, a2, b)"
         // here name is "AND", left is "AND(a1, a2)", right is "b"
