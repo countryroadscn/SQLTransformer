@@ -31,19 +31,15 @@ public class AstParser {
             // try parsing a SQL
             InputStream inputStream = new ByteArrayInputStream(sql.getBytes());
             CharStream antlrInputStream = CharStreams.fromStream(inputStream);
-            ClickHouseLexer ckLexer = new ClickHouseLexer(antlrInputStream);
-            TokenStream tokens = new CommonTokenStream(ckLexer);
-            ClickHouseParser ckParser = new ClickHouseParser(tokens);
-            ClickHouseParser.QueryStmtContext tree = ckParser.queryStmt();
-            // System.out.println(tree.toStringTree(ckParser));
-
-            // Notice: ckParser.queryStmt() can only be called once as it reads data from stream
+            ClickHouseLexer chLexer = new ClickHouseLexer(antlrInputStream);
+            TokenStream tokens = new CommonTokenStream(chLexer);
+            ClickHouseParser chParser = new ClickHouseParser(tokens);
+            // Notice: chParser.queryStmt() can only be called once as it reads data from stream
+            ClickHouseParser.QueryStmtContext tree = chParser.queryStmt();
+            // System.out.println(tree.toStringTree(chParser));
             CstVisitor visitor = new CstVisitor(defaultDatabase, fillDefaultDatabase);
-//            Object ast = visitor.visit(ckParser.describeStmt());
             Object ast = visitor.visit(tree);
-            long end = System.currentTimeMillis();
-            log.debug("It takes " + (end - start) + " ms to parse the SQL.");
-            //System.out.println(ast);
+            log.debug("It takes " + (System.currentTimeMillis() - start) + "ms to parse the sql.");
             if (null != ast) {
                 if(ast instanceof SelectUnionQuery){
                     log.debug("This is a SELECT statement.");
@@ -63,5 +59,4 @@ public class AstParser {
     public Object parse(String sql) {
         return parse(sql, "default");
     }
-
 }

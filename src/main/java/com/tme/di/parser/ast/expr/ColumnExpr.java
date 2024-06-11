@@ -11,11 +11,6 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper=true)
 public class ColumnExpr extends INode {
-
-    private ExprType exprType;
-
-    private boolean expectSingleColumn;
-
     public enum ExprType {
         ALIAS,
         ASTERISK,
@@ -24,8 +19,17 @@ public class ColumnExpr extends INode {
         LAMBDA,
         LITERAL,
         SUBQUERY,
-        WINFUNCTION
+        WINFUNCTION,
+        CASE,
+        EXTRACT,
+        INTERVAL,
+        TRIM,
+        TUPLE,
+        ARRAY
     }
+
+    private ExprType exprType;
+    private boolean expectSingleColumn;
 
     protected ColumnExpr(ExprType exprType) {
         this.exprType = exprType;

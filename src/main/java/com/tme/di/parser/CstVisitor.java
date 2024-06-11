@@ -3,14 +3,14 @@ package com.tme.di.parser;
 import com.tme.di.parser.ast.*;
 import com.tme.di.parser.ast.expr.*;
 import org.antlr.v4.runtime.Token;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CstVisitor extends ClickHouseParserBaseVisitor {
 
+// Concrete Syntax Tree, 用于解析ClickHouse SQL语句的解析树，生成对应的抽象语法树（Abstract Syntax Tree）。
+public class CstVisitor extends ClickHouseParserBaseVisitor<Object> {
     private TableIdentifier currentTableIdentifier;
 
     private String defaultDatabase = "default";
@@ -276,6 +276,7 @@ public class CstVisitor extends ClickHouseParserBaseVisitor {
         return new AssignmentExpr(identifier, expr);
     }
 
+    @SuppressWarnings("unlikely-arg-type")
     @Override
     public Object visitPartitionClause(ClickHouseParser.PartitionClauseContext ctx) {
         if (null != ctx.STRING_LITERAL()) {
