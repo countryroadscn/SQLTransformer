@@ -730,7 +730,20 @@ public class AstVisitor<T> {
         if (expr instanceof LiteralColumnExpr) {
             return visitLiteralColumnExpr(expr);
         }
+        if (expr instanceof BetweenColumnExpr) {
+            return visitBetweenColumnExpr((BetweenColumnExpr) expr);
+        }
 
+        return null;
+    }
+
+    public T visitBetweenColumnExpr(BetweenColumnExpr expr) {
+        if (null != expr.getLeft()) {
+            visitColumnExpr(expr.getLeft());
+        }
+        if (null != expr.getRight()) {
+            visitColumnExpr(expr.getRight());
+        }
         return null;
     }
 

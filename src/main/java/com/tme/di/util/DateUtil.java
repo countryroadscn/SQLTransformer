@@ -12,6 +12,7 @@ import java.util.TimeZone;
 @Slf4j
 public class DateUtil {
 
+
     public static final ThreadLocal<SimpleDateFormat> dateFormat = new ThreadLocal() {
         @Override
         protected SimpleDateFormat initialValue() {
@@ -87,4 +88,28 @@ public class DateUtil {
         return null;
     }
 
+       // 检查是否是秒级时间戳
+    public static boolean isUnixTimestampInSeconds(String timestamp) {
+        return timestamp.matches("\\d{10}");
+    }
+
+    // 检查是否是毫秒级时间戳
+    public static boolean isUnixTimestampInMilliseconds(String timestamp) {
+        return timestamp.matches("\\d{13}");
+    }
+
+    // 检查是否是有效的 Unix 时间戳（秒级或毫秒级）
+    public static boolean isValidUnixTimestamp(String timestamp) {
+        return isUnixTimestampInSeconds(timestamp) || isUnixTimestampInMilliseconds(timestamp);
+    }
+
+    public static void main(String[] args) {
+        String test1 = "1609459200"; // 秒级时间戳
+        String test2 = "1609459200000"; // 毫秒级时间戳
+        String test3 = "invalid_timestamp";
+
+        System.out.println(isValidUnixTimestamp(test1)); // true
+        System.out.println(isValidUnixTimestamp(test2)); // true
+        System.out.println(isValidUnixTimestamp(test3)); // false
+    }
 }

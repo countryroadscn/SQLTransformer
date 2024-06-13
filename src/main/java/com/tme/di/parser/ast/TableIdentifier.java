@@ -1,6 +1,8 @@
 package com.tme.di.parser.ast;
 
 import com.tme.di.parser.AstVisitor;
+import com.tme.di.util.Common;
+
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
@@ -26,7 +28,7 @@ public class TableIdentifier extends Identifier {
 
     public String getQualifiedName(String joinnerSymbol) {
         if (null != db && !db.getQualifiedName().isEmpty()) {
-            return db.getQualifiedName() + joinnerSymbol + getName();
+            return Common.escapeReservedKeyword( db.getQualifiedName()) + joinnerSymbol + getName();
         } else {
             return getName();
         }

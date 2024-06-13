@@ -42,7 +42,7 @@ public class AstParser {
             log.debug("It takes " + (System.currentTimeMillis() - start) + "ms to parse the sql.");
             if (null != ast) {
                 if(ast instanceof SelectUnionQuery){
-                    log.debug("This is a SELECT statement.");
+                    // log.debug("This is a SELECT statement.");
                 } else if(ast instanceof DescribeQuery) {
                     log.debug("This is a DESCRIBE statement");
                 } else{

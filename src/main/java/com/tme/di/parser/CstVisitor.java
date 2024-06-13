@@ -7,9 +7,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 
 
 // Concrete Syntax Tree, 用于解析ClickHouse SQL语句的解析树，生成对应的抽象语法树（Abstract Syntax Tree）。
+
+@Slf4j
 public class CstVisitor extends ClickHouseParserBaseVisitor<Object> {
     private TableIdentifier currentTableIdentifier;
 
@@ -715,6 +718,9 @@ public class CstVisitor extends ClickHouseParserBaseVisitor<Object> {
         } else if (null != ctx.ROLLUP() ) {
             type = SelectStatement.ModifierType.ROLLUP;
         }
+        for (ColumnExpr columnExpr : columnExprs) {
+        //   log.info("columnExpr: {}", columnExpr);
+        }
         GroupByClause groupByClause = new GroupByClause(columnExprs);
         groupByClause.setModifierType(type);
         return groupByClause;
@@ -884,48 +890,58 @@ public class CstVisitor extends ClickHouseParserBaseVisitor<Object> {
         return asteriskColumnExpr;
     }
 
+
+
+    // 多此一举
+    // public Object visitColumnExprBetween(ClickHouseParser.ColumnExprBetweenContext ctx) {
+    //     // TODO: this logic is not correct, it is wrong when the SQL is as follows:
+    //     // SELECT date ,count(a)
+    //     // FROM table
+    //     // WHERE date between '2021-02-11' and '2021-02-17' and act_times>0
+    //     // group by date
+    //     // LIMIT 1000
+    //     ColumnExpr expr1;
+    //     ColumnExpr expr2;
+    //     {
+    //         Identifier name = null;
+    //         if (null != ctx.NOT()) {
+    //             name = new Identifier("lessOrEquals");
+    //         } else {
+    //             name = new Identifier("greaterOrEquals");
+    //         }
+    //         List<ColumnExpr> args = new ArrayList<>();
+    //         args.add((ColumnExpr) visit(ctx.columnExpr(0)));
+    //         args.add((ColumnExpr) visit(ctx.columnExpr(1)));
+    //         expr1 = ColumnExpr.createFunction(name, null, args);
+    //     }
+
+    //     {
+    //         Identifier name = null;
+    //         if (null != ctx.NOT()) {
+    //             name = new Identifier("greaterOrEquals");
+    //         } else {
+    //             name = new Identifier("lessOrEquals");
+    //         }
+    //         List<ColumnExpr> args = new ArrayList<>();
+    //         args.add((ColumnExpr) visit(ctx.columnExpr(0)));
+    //         args.add((ColumnExpr) visit(ctx.columnExpr(2)));
+    //         expr2 = ColumnExpr.createFunction(name, null, args);
+    //     }
+
+    //     Identifier name = new Identifier("and");
+    //     List<ColumnExpr> args = new ArrayList<>();
+    //     args.add(expr1);
+    //     args.add(expr2);
+    //     FunctionColumnExpr functionColumnExpr = ColumnExpr.createFunction(name, null, args);
+    //     return functionColumnExpr;
+    // }
     @Override
     public Object visitColumnExprBetween(ClickHouseParser.ColumnExprBetweenContext ctx) {
-        // TODO: this logic is not correct, it is wrong when the SQL is as follows:
-        // SELECT date ,count(a)
-        // FROM table
-        // WHERE date between '2021-02-11' and '2021-02-17' and act_times>0
-        // group by date
-        // LIMIT 1000
-        ColumnExpr expr1;
-        ColumnExpr expr2;
-        {
-            Identifier name = null;
-            if (null != ctx.NOT()) {
-                name = new Identifier("lessOrEquals");
-            } else {
-                name = new Identifier("greaterOrEquals");
-            }
-            List<ColumnExpr> args = new ArrayList<>();
-            args.add((ColumnExpr) visit(ctx.columnExpr(0)));
-            args.add((ColumnExpr) visit(ctx.columnExpr(1)));
-            expr1 = ColumnExpr.createFunction(name, null, args);
-        }
-
-        {
-            Identifier name = null;
-            if (null != ctx.NOT()) {
-                name = new Identifier("greaterOrEquals");
-            } else {
-                name = new Identifier("lessOrEquals");
-            }
-            List<ColumnExpr> args = new ArrayList<>();
-            args.add((ColumnExpr) visit(ctx.columnExpr(0)));
-            args.add((ColumnExpr) visit(ctx.columnExpr(2)));
-            expr2 = ColumnExpr.createFunction(name, null, args);
-        }
-
-        Identifier name = new Identifier("and");
-        List<ColumnExpr> args = new ArrayList<>();
-        args.add(expr1);
-        args.add(expr2);
-        FunctionColumnExpr functionColumnExpr = ColumnExpr.createFunction(name, null, args);
-        return functionColumnExpr;
+        boolean not = ctx.NOT()!=null;
+        ColumnExpr column = (ColumnExpr) visit(ctx.columnExpr(0));
+        ColumnExpr left = (ColumnExpr) visit(ctx.columnExpr(1));
+        ColumnExpr right = (ColumnExpr) visit(ctx.columnExpr(2));
+        return ColumnExpr.createBetween(not, column, left, right);
     }
 
     @Override

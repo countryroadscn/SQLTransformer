@@ -3,10 +3,15 @@ package com.tme.di.visitor;
 import com.tme.di.parser.AstParser;
 import com.tme.di.parser.ast.*;
 import com.tme.di.parser.ast.expr.*;
+import com.tme.di.util.Common;
+import com.tme.di.util.DateUtil;
+
 import lombok.Data;
 import java.util.*;
 import java.util.stream.Collectors;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class StarRocksSqlBuilder extends BaseSqlBuilder {
     private Map<String, Set<String>> tablename2UnixTimestampColumnNames = new HashMap<>();
     private Stack<String> subQueryTypeStack;
@@ -41,20 +46,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
     }
 
     public static void main(String[] args) {
-        // if (args.length > 0) {
-        //     String clickhouseSql = args[0];
-        //     System.out.println("clickhouse sql: " + clickhouseSql);
-        //     StarRocksSqlBuilder sr = new StarRocksSqlBuilder();
-        //     try{
-        //         String starRocksSql = sr.getStarRocksSql(clickhouseSql);
-        //         System.out.println("starrocks sql: " + starRocksSql);
-        //     } catch (SqlRewriteException e) {
-        //         e.printStackTrace();
-        //     }
-        // } else {
-        //     System.out.println("No input provided");
-        // }
-        String clickhouseSql = "SELECT toDateTime(date_time) FROM db.table";
+        String clickhouseSql = "SELECT a AS t, sum(toDateTime(date_time)) AS key, avg(col) AS b  FROM default.table where day not between toDate(1718080711) and toDate(1718080712) and rtime >='2023-01-01 10:00:00' and rtime<='2023-01-02 10:00:00' AND os like '%andriod%' GROUP BY t ORDER BY t ASC";
         StarRocksSqlBuilder sr = new StarRocksSqlBuilder();
         try{
             String starRocksSql = sr.getStarRocksSql(clickhouseSql);
@@ -77,25 +69,13 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
     // 用来获取纯CK的语法下的SQL, 直接调用super.visit()会由于dynamic dispatch可能走到本子类的其他方法拿到被改写过的StarRocks SQL.
     private static final BaseSqlBuilder ckSqlBuilder = new BaseSqlBuilder();
 
-    private static final Set<String> BUILT_IN_IDENTIFIER_IN_UPPER_CASE = new HashSet<>(Arrays.asList(
-            "COLUMN", "FORCE", "ARRAY", "FROM"
-    ));
-
-    public String escapeReservedKeyword(String name) {
-        // 处理用到了保留字的情况
-        if (BUILT_IN_IDENTIFIER_IN_UPPER_CASE.contains(name.toUpperCase())) {
-            return '`' + name + '`';
-        }
-        return name;
-    }
-
     /**
      * 真的别名直接就返回不要走到下面的visitIdentifier的逻辑
      */
     public String visitAliasIdentifier(Identifier identifier) {
         String name = super.visitIdentifier(identifier);
         //        name = getCleanAliasIdentifierName(name);
-        name = escapeReservedKeyword(name);
+        name = Common.escapeReservedKeyword(name);
         return name;
     }
 
@@ -103,7 +83,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
     public String visitIdentifier(Identifier identifier) {
         String name = super.visitIdentifier(identifier);
         name = stripEnclosingDoubleQuotes(name);
-        name = escapeReservedKeyword(name);
+        name = Common.escapeReservedKeyword(name);
         // 实现Clickhouse的计算列功能
         String expr = tryGetExprFromAliasMap(name);
         if (expr != null) {
@@ -568,7 +548,15 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                     break;
                 }
                 case "toDate": {
-                    rewrittenFunction = String.format("TO_DATE(%s)", firstArg);
+                    // log.info("toDate");
+                    // rewrittenFunction = String.format("STR2DATE(FROM_UNIXTIME(CAST(%s AS DOUBLE)))", firstArg);
+                    if (isUnixTimestampType(firstArgColumnExpr)) {
+                        // log.info("toDate unix timestamp");
+                        rewrittenFunction = String.format("STR2DATE(FROM_UNIXTIME(CAST(%s AS DOUBLE)), '%Y-%m-%d %H:%i:%s')", firstArg);
+                    } else {
+                        // log.info("toDate string");
+                        rewrittenFunction = String.format("TO_DATE(%s)", firstArg);
+                    }
                     break;
                 }
                 case "toHour": {
@@ -635,9 +623,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                     break;
                 }
                 case "toTime": {
-                    rewrittenFunction =
-                            String.format("CAST(CONCAT('1970-01-02 ', SPLIT(CAST(%s AS STRING), ' '))[1] AS DATETIME)",
-                                    firstArg);
+                    rewrittenFunction = String.format("CAST(CONCAT('1970-01-02 ', SPLIT(CAST(%s AS STRING), ' '))[1] AS DATETIME)", firstArg);
                     break;
                 }
                 case "toYYYYMMDD": {
@@ -685,9 +671,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                 // math 数学函数
                 case "floor": {
                     if (argLength == 2) {
-                        rewrittenFunction =
-                                String.format("round(%s * power(10, %s)) / power(10, %s)", firstArg, secondArg,
-                                        secondArg);
+                        rewrittenFunction = String.format("round(%s * power(10, %s)) / power(10, %s)", firstArg, secondArg, secondArg);
                     }
                     break;
                 }
@@ -915,6 +899,10 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                     rewrittenFunction = String.format("ARRAY_SLICE(%s, %s, %s)", firstArg, secondArg, thirdArg);
                     break;
                 }
+                case "hasAny":{
+                    rewrittenFunction = String.format("ARRAY_INTERSECT(%s, %s)", firstArg, secondArg);
+                    break;
+                }
                 case "groupUniqArray": {
                     rewrittenFunction = String.format("ARRAY_AGG(%s)", firstArg);
                     break;
@@ -926,6 +914,10 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                 // 聚合函数
                 case "groupBitmap": {
                     rewrittenFunction = String.format("COUNT(DISTINCT %s)", firstArg);
+                    break;
+                }
+                case "count":{
+                    rewrittenFunction = String.format("COUNT(%s)", firstArg);
                     break;
                 }
                 case "argMax": {
@@ -997,7 +989,11 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                 case "toUInt64OrNull":
                 case "toInt64":
                 case "toInt64OrNull": {
-                    rewrittenFunction = String.format("CAST(%s AS BIGINT)", firstArg);
+                    if (firstArg.toUpperCase().equals("NOW()")) {
+                        rewrittenFunction = "CAST(UNIX_TIMESTAMP(NOW()) AS BIGINT)";
+                    } else{
+                        rewrittenFunction = String.format("CAST(%s AS BIGINT)", firstArg);
+                    }
                     break;
                 }
                 case "toUInt64OrZero":
@@ -1128,6 +1124,47 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                     rewrittenFunction = String.format("APPROX_COUNT_DISTINCT(%s)", firstArg);
                     break;
                 }
+                // sumIf(column, cond), countIf(cond), avgIf(x, cond), quantilesTimingIf(level1, level2)(x, cond), argMinIf(arg, val, cond) and so on.
+                case "sumIf": {
+                    rewrittenFunction = String.format("SUM(IF(%s, %s, 0))", secondArg, firstArg);
+                    break;
+                }
+                case "countIf": {
+                    rewrittenFunction = String.format("COUNT_IF(%s)", firstArg);
+                    break;
+                }
+                case "avgIf": {
+                    rewrittenFunction = String.format("AVG(IF(%s, %s, 0))", secondArg, firstArg);
+                    break;
+                }
+                case "quantilesTimingIf": {
+                    rewrittenFunction = String.format("percentile_cont(%s, IF(%s, %s, 0))", firstParam, secondArg, firstArg);
+                    break;
+                }
+                case "argMinIf": {
+                    rewrittenFunction = String.format("MIN_BY(%s, IF(%s, %s, NULL))", firstArg, secondArg, firstArg);
+                    break;
+                }
+                case "argMaxIf": {
+                    rewrittenFunction = String.format("MAX_BY(%s, IF(%s, %s, NULL))", firstArg, secondArg, firstArg);
+                    break;
+                }
+                case "uniqExactIf": {
+                    rewrittenFunction = String.format("APPROX_COUNT_DISTINCT(IF(%s, %s, NULL))", secondArg, firstArg);
+                    break;
+                }
+                case "uniqCombinedIf": {
+                    rewrittenFunction = String.format("APPROX_COUNT_DISTINCT(IF(%s, %s, NULL))", secondArg, firstArg);
+                    break;
+                }
+                case "quantile": {
+                    rewrittenFunction = String.format("percentile_cont(%s, %s)", firstParam, firstArg);
+                    break;
+                }
+                case "toStartOfInterval": {
+                    rewrittenFunction = Common.convertFuncToStartOfInterval(functionExpr.toString());
+                    break;
+                }
                 default: {
                     break;
                 }
@@ -1250,6 +1287,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
     }
 
     private static final Set<String> FUNCTION_THAT_RETURNS_DATE_TIME = new HashSet<>(Arrays.asList(
+            "TODATE",
             "TODATETIME",
             "TODATETIMEORZERO",
             "TODATETIMEORNULL",
@@ -1380,11 +1418,14 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
                         .contains(argInCKSqlUpper.toLowerCase());
             }
         }
-        return false;
+
+        // log.info("isUnixTimestampType: " + argInCKSqlUpper+ " " + DateUtil.isValidUnixTimestamp(argInCKSqlUpper));
+        return DateUtil.isValidUnixTimestamp(argInCKSqlUpper);
     }
 
     @Override
     public String visitFunctionColumnExpr(ColumnExpr expr) {
+        // log.info("visitFunctionColumnExpr: " + expr);
         FunctionColumnExpr functionColumnExpr = (FunctionColumnExpr) expr;
         String sql;
         if (enableHandleNullable) {
@@ -1396,6 +1437,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
 
         sql = rewriteClickhouseFunction(functionColumnExpr);
         if (null != sql) {
+            // log.info("rewriteClickhouseFunction: " + sql);
             return sql;
         }
         sql = super.visitFunctionColumnExpr(expr);
@@ -1406,11 +1448,11 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
      * 记录当前作用域下的别名和表达式的关系, 实现计算列的功能
      */
     public void updateAliasMap(String alias, String expr) {
-        currentAlias2Expr.put(escapeReservedKeyword(stripEnclosingDoubleQuotes(alias)), expr);
+        currentAlias2Expr.put(Common.escapeReservedKeyword(stripEnclosingDoubleQuotes(alias)), expr);
     }
 
     public String tryGetExprFromAliasMap(String alias) {
-        return currentAlias2Expr.get(escapeReservedKeyword(stripEnclosingDoubleQuotes(alias)));
+        return currentAlias2Expr.get(Common.escapeReservedKeyword(stripEnclosingDoubleQuotes(alias)));
     }
 
     @Override
@@ -1485,7 +1527,7 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
         if (null != groupByClause.getGroupByExprs()) {
             String expr = visitColumnExprList(groupByClause.getGroupByExprs());
             if (null != expr && !expr.isEmpty()) {
-                StringBuilder buffer = new StringBuilder("GROUP BY ");
+                StringBuilder buffer = new StringBuilder(" GROUP BY ");
                 expr = expr.replace("{,}", ",");
                 switch (groupByClause.getModifierType()) {
                     case CUBE:
@@ -1506,18 +1548,25 @@ public class StarRocksSqlBuilder extends BaseSqlBuilder {
 
     public String getStarRocksSql(String clickHouseSql) throws SqlRewriteException {
         try{
+            // 1. 解析ClickHouse SQL，生成AST
             AstParser astParser = new AstParser();
-            Object parsedResult = astParser.parse(clickHouseSql);
+            Object ast = astParser.parse(clickHouseSql);
+            // log.debug("ClickHouse AST: " + ast);
             // PASS两次是为了第一次PASS的时候能够生成SqlNode树(记录上下游的信息, 各种元信息等), 这样第二次PASS的时候才能实现帮当前SELECT的
             // 列补齐子查询的别名等功能
             resetSqlNodeStatus();
-            visit((Query) parsedResult);
+            String first = visit((Query) ast);
+            // log.debug("first pass: " + first);
             traverseSqlScope(start);
-            this.buildNodeGraph = false;
-            resetSqlNodeStatus();
-            return visit((Query) parsedResult);
+            // this.buildNodeGraph = false;
+            // resetSqlNodeStatus();
+            // String second =  visit((Query) ast);
+            // log.debug("second pass: " + second);
+            return first;
         }catch (Exception e){
-            throw new SqlRewriteException("Rewrite ClickHouse Sql to StarRocks Sql failed:" + e.getMessage());
+            log.info("Rewrite ClickHouse Sql "+clickHouseSql+" to StarRocks Sql failed:" + e.getMessage());
+            e.printStackTrace();
+            throw new SqlRewriteException("Rewrite ClickHouse Sql "+clickHouseSql+" to StarRocks Sql failed:" + e.getMessage());
         }
     }
 

@@ -1,2 +1,798 @@
 2024-06-11 16:21:35 AstParser.java DEBUG It takes 267ms to parse the sql.
 2024-06-11 16:21:35 AstParser.java DEBUG This is a SELECT statement.
+2024-06-11 17:07:13 AstParser.java DEBUG It takes 599ms to parse the sql.
+2024-06-11 17:07:13 AstParser.java DEBUG This is a SELECT statement.
+2024-06-11 19:26:05 AstParser.java DEBUG It takes 289ms to parse the sql.
+2024-06-11 19:26:05 AstParser.java DEBUG This is a SELECT statement.
+2024-06-11 19:26:05 StarRocksSqlBuilder.java DEBUG ClickHouse AST: SelectUnionQuery(statements=[SelectStatement(modifierType=NONE, distinct=false, withTotals=false, withClause=null, fromClause=FromClause(expr=JoinExpr(exprType=TABLE, opType=INNER, opMode=DEFAULT, finalExpr=false, tableExpr=TableExpr(expr=null, alias=null, function=null, identifier=Identifier{name='table'}, subQuery=null, exprType=null), sampleClause=null, leftExpr=null, rightExpr=null, joinConstraintClause=null)), arrayJoinClause=null, prewhereClause=null, whereClause=WhereClause(whereExpr=ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)), groupByClause=null, havingClause=null, orderByClause=null, limitByClause=null, limitClause=null, settingsClause=null, windowClause=null, exprs=[ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)])], isScalar=false)
+2024-06-11 19:26:48 AstParser.java DEBUG It takes 290ms to parse the sql.
+2024-06-11 19:26:48 AstParser.java DEBUG This is a SELECT statement.
+2024-06-11 19:26:48 StarRocksSqlBuilder.java DEBUG ClickHouse AST: SelectUnionQuery(statements=[SelectStatement(modifierType=NONE, distinct=false, withTotals=false, withClause=null, fromClause=FromClause(expr=JoinExpr(exprType=TABLE, opType=INNER, opMode=DEFAULT, finalExpr=false, tableExpr=TableExpr(expr=null, alias=null, function=null, identifier=Identifier{name='table'}, subQuery=null, exprType=null), sampleClause=null, leftExpr=null, rightExpr=null, joinConstraintClause=null)), arrayJoinClause=null, prewhereClause=null, whereClause=WhereClause(whereExpr=ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)), groupByClause=null, havingClause=null, orderByClause=null, limitByClause=null, limitClause=null, settingsClause=null, windowClause=null, exprs=[ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)])], isScalar=false)
+2024-06-11 19:31:51 AstParser.java DEBUG It takes 271ms to parse the sql.
+2024-06-11 19:31:51 AstParser.java DEBUG This is a SELECT statement.
+2024-06-11 19:31:51 StarRocksSqlBuilder.java DEBUG ClickHouse AST: SelectUnionQuery(statements=[SelectStatement(modifierType=NONE, distinct=false, withTotals=false, withClause=null, fromClause=FromClause(expr=JoinExpr(exprType=TABLE, opType=INNER, opMode=DEFAULT, finalExpr=false, tableExpr=TableExpr(expr=null, alias=null, function=null, identifier=Identifier{name='table'}, subQuery=null, exprType=null), sampleClause=null, leftExpr=null, rightExpr=null, joinConstraintClause=null)), arrayJoinClause=null, prewhereClause=null, whereClause=WhereClause(whereExpr=ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)), groupByClause=null, havingClause=null, orderByClause=null, limitByClause=null, limitClause=null, settingsClause=null, windowClause=null, exprs=[ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)])], isScalar=false)
+2024-06-11 19:32:44 AstParser.java DEBUG It takes 273ms to parse the sql.
+2024-06-11 19:32:44 AstParser.java DEBUG This is a SELECT statement.
+2024-06-11 19:32:44 StarRocksSqlBuilder.java DEBUG ClickHouse AST: SelectUnionQuery(statements=[SelectStatement(modifierType=NONE, distinct=false, withTotals=false, withClause=null, fromClause=FromClause(expr=JoinExpr(exprType=TABLE, opType=INNER, opMode=DEFAULT, finalExpr=false, tableExpr=TableExpr(expr=null, alias=null, function=null, identifier=Identifier{name='table'}, subQuery=null, exprType=null), sampleClause=null, leftExpr=null, rightExpr=null, joinConstraintClause=null)), arrayJoinClause=null, prewhereClause=null, whereClause=WhereClause(whereExpr=ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)), groupByClause=null, havingClause=null, orderByClause=null, limitByClause=null, limitClause=null, settingsClause=null, windowClause=null, exprs=[ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)])], isScalar=false)
+2024-06-12 10:49:11 AstParser.java DEBUG It takes 294ms to parse the sql.
+2024-06-12 10:49:11 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:49:11 StarRocksSqlBuilder.java DEBUG ClickHouse AST: SelectUnionQuery(statements=[SelectStatement(modifierType=NONE, distinct=false, withTotals=false, withClause=null, fromClause=FromClause(expr=JoinExpr(exprType=TABLE, opType=INNER, opMode=DEFAULT, finalExpr=false, tableExpr=TableExpr(expr=null, alias=null, function=null, identifier=Identifier{name='table'}, subQuery=null, exprType=null), sampleClause=null, leftExpr=null, rightExpr=null, joinConstraintClause=null)), arrayJoinClause=null, prewhereClause=null, whereClause=WhereClause(whereExpr=ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)), groupByClause=null, havingClause=null, orderByClause=null, limitByClause=null, limitClause=null, settingsClause=null, windowClause=null, exprs=[ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)])], isScalar=false)
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 186ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 64ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 47ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 19ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 5ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 31ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 14ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is NOT a SELECT or Describe statement.
+2024-06-12 10:51:40 TestReferredPartitionsDetector.java INFO AlterTableQuery(cluster=null, identifier=Identifier{name='my_tbl'}, clauses=[AddColumnAlterTableClause(ifNotExists=true, element=ColumnTableElementExpr(name=Identifier{name='id'}, type=Int64, property=null, comment=null, codec=null, ttl=null), after=null)])
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 2ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is NOT a SELECT or Describe statement.
+2024-06-12 10:51:40 TestReferredPartitionsDetector.java INFO AlterTableQuery(cluster=null, identifier=Identifier{name='my_tbl'}, clauses=[DropPartitionAlterTableClause(clause=PartitionClause(clauseType=LIST, id=null, list=[''2020-11-21'']))])
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 15ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 10ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is NOT a SELECT or Describe statement.
+2024-06-12 10:51:40 TestReferredPartitionsDetector.java INFO my_cluster
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 1ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is NOT a SELECT or Describe statement.
+2024-06-12 10:51:40 TestReferredPartitionsDetector.java INFO my_db.my_tbl_local
+2024-06-12 10:51:40 TestReferredPartitionsDetector.java INFO It takes 2 ms
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 0ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is NOT a SELECT or Describe statement.
+2024-06-12 10:51:40 TestAstParser.java INFO AlterTableQuery(cluster=null, identifier=Identifier{name='my_tbl'}, clauses=[AddColumnAlterTableClause(ifNotExists=true, element=ColumnTableElementExpr(name=Identifier{name='id'}, type=Int64, property=null, comment=null, codec=null, ttl=null), after=null)])
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 0ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is NOT a SELECT or Describe statement.
+2024-06-12 10:51:40 TestAstParser.java INFO AlterTableQuery(cluster=null, identifier=Identifier{name='my_tbl'}, clauses=[DropPartitionAlterTableClause(clause=PartitionClause(clauseType=LIST, id=null, list=[''2020-11-21'']))])
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 20ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 1ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is NOT a SELECT or Describe statement.
+2024-06-12 10:51:40 TestAstParser.java INFO my_cluster
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 1ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is NOT a SELECT or Describe statement.
+2024-06-12 10:51:40 TestAstParser.java INFO my_db.my_tbl_local
+2024-06-12 10:51:40 TestAstParser.java INFO It takes 2 ms
+2024-06-12 10:51:40 AstParser.java DEBUG It takes 8ms to parse the sql.
+2024-06-12 10:51:40 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:53:54 AstParser.java DEBUG It takes 328ms to parse the sql.
+2024-06-12 10:53:54 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:57:44 AstParser.java DEBUG It takes 302ms to parse the sql.
+2024-06-12 10:57:44 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:58:28 AstParser.java DEBUG It takes 321ms to parse the sql.
+2024-06-12 10:58:28 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 10:59:11 AstParser.java DEBUG It takes 308ms to parse the sql.
+2024-06-12 10:59:11 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:07:38 AstParser.java DEBUG It takes 297ms to parse the sql.
+2024-06-12 11:07:38 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:15:46 AstParser.java DEBUG It takes 348ms to parse the sql.
+2024-06-12 11:15:46 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:15:46 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 AstParser.java DEBUG It takes 303ms to parse the sql.
+2024-06-12 11:18:31 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:18:31 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 AstParser.java DEBUG It takes 344ms to parse the sql.
+2024-06-12 11:29:08 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:29:08 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 AstParser.java DEBUG It takes 326ms to parse the sql.
+2024-06-12 11:32:34 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:32:34 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 AstParser.java DEBUG It takes 329ms to parse the sql.
+2024-06-12 11:33:21 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME false
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711 true
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712 true
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:33:21 StarRocksSqlBuilder.java INFO visitFunctionColumnExpr: ColumnExpr(exprType=FUNCTION, expectSingleColumn=false)
+2024-06-12 11:37:25 AstParser.java DEBUG It takes 320ms to parse the sql.
+2024-06-12 11:37:25 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME false
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711 true
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE)))
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712 true
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE))) 
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711)
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080712)
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712) 
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 11:37:25 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:25 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 11:37:28 AstParser.java DEBUG It takes 339ms to parse the sql.
+2024-06-12 11:37:28 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME false
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711 true
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE)))
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712 true
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE))) 
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711)
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080712)
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712) 
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 11:37:28 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:37:28 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 11:48:49 AstParser.java DEBUG It takes 317ms to parse the sql.
+2024-06-12 11:48:49 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME false
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711 true
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE)))
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712 true
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE))) 
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711)
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080712)
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712) 
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 11:48:49 BaseSqlBuilder.java INFO visitFunctionColumnExpr
+2024-06-12 11:48:49 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 11:51:27 AstParser.java DEBUG It takes 330ms to parse the sql.
+2024-06-12 11:51:27 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME false
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 11:51:27 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711 true
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE)))
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712 true
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE))) 
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 11:51:27 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711)
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080712)
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712) 
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 11:51:27 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 11:53:38 AstParser.java DEBUG It takes 320ms to parse the sql.
+2024-06-12 11:53:38 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME false
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 11:53:38 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711 true
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE)))
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712 true
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE))) 
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 11:53:38 StarRocksSqlBuilder.java DEBUG first pass: SELECT CAST(date_time AS DATETIME) AS `key`,col AS b FROM default.table WHERE day NOT BETWEEN STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'   AND os LIKE '%andriod%'
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 11:53:38 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711)
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080712)
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712) 
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 11:53:38 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 11:53:38 StarRocksSqlBuilder.java DEBUG second pass: SELECT CAST(date_time AS DATETIME) AS `key`,col AS b FROM default.table WHERE day NOT BETWEEN TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'   AND os LIKE '%andriod%'
+2024-06-12 12:03:23 AstParser.java DEBUG It takes 307ms to parse the sql.
+2024-06-12 12:03:23 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME false
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 12:03:23 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711 true
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE)))
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712 true
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE))) 
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 12:03:23 StarRocksSqlBuilder.java DEBUG first pass: SELECT CAST(date_time AS DATETIME) AS `key`,col AS b FROM `default`.table WHERE day NOT BETWEEN STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'   AND os LIKE '%andriod%'
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 12:03:23 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711)
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080712)
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712) 
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 12:03:23 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 12:03:23 StarRocksSqlBuilder.java DEBUG second pass: SELECT CAST(date_time AS DATETIME) AS `key`,col AS b FROM `default`.table WHERE day NOT BETWEEN TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'   AND os LIKE '%andriod%'
+2024-06-12 12:03:46 AstParser.java DEBUG It takes 306ms to parse the sql.
+2024-06-12 12:03:46 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME false
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 12:03:46 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711 true
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE)))
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712 true
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE))) 
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 12:03:46 StarRocksSqlBuilder.java DEBUG first pass: SELECT CAST(date_time AS DATETIME) AS `key`,col AS b FROM `default`.table WHERE day NOT BETWEEN STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'   AND os LIKE '%andriod%'
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 12:03:46 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711)
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080712)
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712) 
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 12:03:46 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 12:03:46 StarRocksSqlBuilder.java DEBUG second pass: SELECT CAST(date_time AS DATETIME) AS `key`,col AS b FROM `default`.table WHERE day NOT BETWEEN TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'   AND os LIKE '%andriod%'
+2024-06-12 12:04:54 AstParser.java DEBUG It takes 356ms to parse the sql.
+2024-06-12 12:04:54 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME false
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: sum(CAST(date_time AS DATETIME))
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: avg(col)
+2024-06-12 12:04:54 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711 true
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE)))
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712 true
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE))) 
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 12:04:54 StarRocksSqlBuilder.java DEBUG first pass: SELECT a AS t,sum(CAST(date_time AS DATETIME)) AS `key`,avg(col) AS b FROM `default`.table WHERE day NOT BETWEEN STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'   AND os LIKE '%andriod%'GROUP BY a ORDER BY a ASC 
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: sum(CAST(date_time AS DATETIME))
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: avg(col)
+2024-06-12 12:04:54 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711)
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO toDate string
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080712)
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712) 
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 12:04:54 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 12:04:54 StarRocksSqlBuilder.java DEBUG second pass: SELECT a AS t,sum(CAST(date_time AS DATETIME)) AS `key`,avg(col) AS b FROM `default`.table WHERE day NOT BETWEEN TO_DATE(1718080711) AND TO_DATE(1718080712)  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'   AND os LIKE '%andriod%'GROUP BY a ORDER BY a ASC 
+2024-06-12 12:15:51 CstVisitor.java INFO columnExpr: ColumnExpr(exprType=IDENTIFIER, expectSingleColumn=false)
+2024-06-12 12:15:51 AstParser.java DEBUG It takes 369ms to parse the sql.
+2024-06-12 12:15:51 AstParser.java DEBUG This is a SELECT statement.
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO isUnixTimestampType: DATE_TIME false
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: CAST(date_time AS DATETIME)
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: sum(CAST(date_time AS DATETIME))
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: avg(col)
+2024-06-12 12:15:51 BaseSqlBuilder.java INFO visitBetweenColumnExpr
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080711 true
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE)))
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO toDate
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO isUnixTimestampType: 1718080712 true
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO toDate unix timestamp
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE))) 
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime >= '2023-01-01 10:00:00' 
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'  
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: rtime <= '2023-01-02 10:00:00' 
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'  
+2024-06-12 12:15:51 StarRocksSqlBuilder.java INFO rewriteClickhouseFunction: os LIKE '%andriod%'
+2024-06-12 12:15:51 StarRocksSqlBuilder.java DEBUG first pass: SELECT a AS t,sum(CAST(date_time AS DATETIME)) AS `key`,avg(col) AS b FROM `default`.table WHERE day NOT BETWEEN STR2DATE(FROM_UNIXTIME(CAST(1718080711 AS DOUBLE))) AND STR2DATE(FROM_UNIXTIME(CAST(1718080712 AS DOUBLE)))  AND rtime >= '2023-01-01 10:00:00'   AND rtime <= '2023-01-02 10:00:00'   AND os LIKE '%andriod%' GROUP BY a ORDER BY a ASC 
+2024-06-13 10:59:19 AstParser.java DEBUG It takes 439ms to parse the sql.
+2024-06-13 10:59:19 StarRocksSqlBuilder.java INFO Rewrite ClickHouse Sql SELECT a AS t, sum(toDateTime(date_time)) AS key, avg(col) AS b  FROM default.table where day not between toDate(1718080711) and toDate(1718080712) and rtime >='2023-01-01 10:00:00' and rtime<='2023-01-02 10:00:00' AND os like '%andriod%' GROUP BY t ORDER BY t ASC to StarRocks Sql failed:Conversion = 'Y'

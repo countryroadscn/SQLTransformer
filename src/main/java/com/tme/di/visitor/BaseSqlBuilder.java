@@ -5,7 +5,9 @@ import com.tme.di.parser.ast.*;
 import com.tme.di.parser.ast.expr.*;
 
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class BaseSqlBuilder extends AstVisitor<String> {
 
     private String joinerSymbol = ".";
@@ -585,6 +587,7 @@ public class BaseSqlBuilder extends AstVisitor<String> {
             return visitAliasColumnExpr((AliasColumnExpr) expr);
         }
         if (expr instanceof FunctionColumnExpr) {
+            // log.info("visitFunctionColumnExpr");
             return visitFunctionColumnExpr(expr);
         }
         if (expr instanceof SubqueryColumnExpr) {
@@ -605,7 +608,36 @@ public class BaseSqlBuilder extends AstVisitor<String> {
         if(expr instanceof LambdaColumnExpr){
             return visitLambdaColumnExpr((LambdaColumnExpr) expr);
         }
+        if (expr instanceof BetweenColumnExpr){
+            return visitBetweenColumnExpr((BetweenColumnExpr) expr);
+        }
         return null;
+    }
+
+    @Override
+    public String visitBetweenColumnExpr(BetweenColumnExpr expr) {
+        // log.info("visitBetweenColumnExpr");
+        StringBuffer buffer = new StringBuffer();
+        if (null != expr.getColumn()) {
+            String column = visitColumnExpr(expr.getColumn());
+            buffer.append(column).append(" ");
+        }
+
+        if (null != expr.getNot() && expr.getNot()) {
+            buffer.append("NOT ");
+        }
+
+        buffer.append("BETWEEN ");
+        if (null != expr.getLeft()) {
+            String left = visitColumnExpr(expr.getLeft());
+            buffer.append(left);
+        }
+
+        if (null != expr.getRight()) {
+            String right = visitColumnExpr(expr.getRight());
+            buffer.append(" AND ").append(right);
+        }
+        return buffer.toString();
     }
 
     @Override
@@ -703,7 +735,7 @@ public class BaseSqlBuilder extends AstVisitor<String> {
             String column = visit(columnExprs.get(0));
             ColumnExpr argsExpr = columnExprs.get(1);
             String literal = visit(argsExpr);
-            return "(" + column + ") - (" + literal + ")";
+            return column + " - " + literal;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -716,7 +748,7 @@ public class BaseSqlBuilder extends AstVisitor<String> {
             String column = visit(columnExprs.get(0));
             ColumnExpr argsExpr = columnExprs.get(1);
             String literal = visit(argsExpr);
-            return "(" + column + ") + (" + literal + ")";
+            return column + " + " + literal;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -733,7 +765,7 @@ public class BaseSqlBuilder extends AstVisitor<String> {
                 // extract the tuple
                 List<ColumnExpr> tupleFunctionExprArgs = tupleFunctionExpr.getArgs();
                 StringBuffer inStatementBuffer = new StringBuffer();
-                inStatementBuffer.append("(").append(column).append(") IN ").append("(");
+                inStatementBuffer.append(column).append(" IN ").append("(");
                 for (int i = 0; i < tupleFunctionExprArgs.size(); i++) {
                     ColumnExpr arg = tupleFunctionExprArgs.get(i);
                     String value = visit(arg);
@@ -746,7 +778,7 @@ public class BaseSqlBuilder extends AstVisitor<String> {
                 return inStatementBuffer.toString();
             } else if (argsExpr instanceof LiteralColumnExpr) {
                 String literal = visit(argsExpr);
-                return "(" + column + ") = (" + literal + ")";
+                return  column + " = " + literal;
             } else {
                 return null;
             }
@@ -756,6 +788,23 @@ public class BaseSqlBuilder extends AstVisitor<String> {
         }
     }
 
+    // public String visitLikeFunctionColumnExpr(FunctionColumnExpr expr) {
+    //     try {
+    //         List<ColumnExpr> columnExprs = expr.getArgs();
+    //         String column = visit(columnExprs.get(0));
+    //         ColumnExpr argsExpr = columnExprs.get(1);
+    //         if (argsExpr instanceof LiteralColumnExpr) {
+    //             String literal = visit(argsExpr);
+    //             return "(" + column + ") LIKE (" + literal + ")";
+    //         } else {
+    //             return null;
+    //         }
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //         return null;
+    //     }
+    // }
+
     public String visitLikeFunctionColumnExpr(FunctionColumnExpr expr) {
         try {
             List<ColumnExpr> columnExprs = expr.getArgs();
@@ -763,7 +812,7 @@ public class BaseSqlBuilder extends AstVisitor<String> {
             ColumnExpr argsExpr = columnExprs.get(1);
             if (argsExpr instanceof LiteralColumnExpr) {
                 String literal = visit(argsExpr);
-                return "(" + column + ") LIKE (" + literal + ")";
+                return  column + " LIKE " + literal;
             } else {
                 return null;
             }
@@ -792,31 +841,31 @@ public class BaseSqlBuilder extends AstVisitor<String> {
                 funcName = visitFunctionIdentifier(functionColumnExpr.getName());
                 switch (funcName) {
                     case "equals":
-                        buffer.append("({VAR}) = ({VALUE}) ");
+                        buffer.append("{VAR} = {VALUE} ");
                         isCompareOperator = true;
                         break;
                     case "notEquals":
-                        buffer.append("({VAR}) != ({VALUE}) ");
+                        buffer.append("{VAR} != {VALUE} ");
                         isCompareOperator = true;
                         break;
                     case "lessOrEquals":
-                        buffer.append("({VAR}) <= ({VALUE}) ");
+                        buffer.append("{VAR} <= {VALUE} ");
                         isCompareOperator = true;
                         break;
                     case "greaterOrEquals":
-                        buffer.append("({VAR}) >= ({VALUE}) ");
+                        buffer.append("{VAR} >= {VALUE} ");
                         isCompareOperator = true;
                         break;
                     case "less":
-                        buffer.append("({VAR}) < ({VALUE}) ");
+                        buffer.append("{VAR} < {VALUE} ");
                         isCompareOperator = true;
                         break;
                     case "greater":
-                        buffer.append("({VAR}) > ({VALUE}) ");
+                        buffer.append("{VAR} > {VALUE} ");
                         isCompareOperator = true;
                         break;
                     case "and":
-                        buffer.append("({EXPR1} AND {EXPR2}) ");
+                        buffer.append("{EXPR1} AND {EXPR2} ");
                         isLogicalOperator = true;
                         break;
                     case "or":
@@ -827,11 +876,11 @@ public class BaseSqlBuilder extends AstVisitor<String> {
                         buffer.append("COUNT(DISTINCT({VALUE}))");
                         break;
                     case "divide":
-                        buffer.append("({EXPR1}) / ({EXPR2}) ");
+                        buffer.append("{EXPR1} / {EXPR2} ");
                         isArithmeticOperator = true;
                         break;
                     case "multiply":
-                        buffer.append("({EXPR1}) * ({EXPR2}) ");
+                        buffer.append("{EXPR1} * {EXPR2} ");
                         isArithmeticOperator = true;
                         break;
                     case "in":

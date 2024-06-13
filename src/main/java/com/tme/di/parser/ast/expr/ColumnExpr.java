@@ -14,6 +14,7 @@ public class ColumnExpr extends INode {
     public enum ExprType {
         ALIAS,
         ASTERISK,
+        BETWEEN,
         FUNCTION,
         IDENTIFIER,
         LAMBDA,
@@ -80,6 +81,10 @@ public class ColumnExpr extends INode {
             }
         }
         return new FunctionColumnExpr(name, params, args);
+    }
+
+    public static BetweenColumnExpr createBetween(boolean not, ColumnExpr column, ColumnExpr left, ColumnExpr right) {
+        return new BetweenColumnExpr(not, column, left, right);
     }
 
     public static IdentifierColumnExpr createIdentifier(ColumnIdentifier columnIdentifier) {
